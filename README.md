@@ -1,5 +1,5 @@
 ## CQRS Design Pattern: 
-Separate the Read operation & Write operation in different services and Sync the services using Message Queue:
+Separate the Read operation & Write operation in different services with different databases and Sync the services using any Message Queue:
 <img width="902" alt="image" src="https://github.com/inurzamal/CQRS-Kafka/assets/18715701/0c17074d-738d-4f2a-9cc4-dfb58eabff97">
 
 
