@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "PRODUCT_QUERY")
 @Data
@@ -20,4 +22,5 @@ public class Product {
     private String name;
     private String description;
     private double price;
+    private UUID uuid;
 }

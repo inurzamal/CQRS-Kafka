@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class ProductCommandService {
 
@@ -24,8 +26,8 @@ public class ProductCommandService {
         return productDO;
     }
 
-    public Product updateProduct(long id,ProductEvent productEvent){
-        Product existingProduct = repository.findById(id).get();
+    public Product updateProduct(UUID uuid, ProductEvent productEvent){
+        Product existingProduct = repository.findByUUID(uuid);
         Product newProduct=productEvent.getProduct();
         existingProduct.setName(newProduct.getName());
         existingProduct.setPrice(newProduct.getPrice());

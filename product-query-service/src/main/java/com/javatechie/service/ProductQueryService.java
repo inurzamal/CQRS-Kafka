@@ -27,7 +27,7 @@ public class ProductQueryService {
             repository.save(product);
         }
         if (productEvent.getEventType().equals("UpdateProduct")) {
-            Product existingProduct = repository.findById(product.getId()).get();
+            Product existingProduct = repository.findByUUID(product.getUuid());
             existingProduct.setName(product.getName());
             existingProduct.setPrice(product.getPrice());
             existingProduct.setDescription(product.getDescription());

@@ -6,6 +6,8 @@ import com.javatechie.service.ProductCommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/products")
 public class ProductCommandController {
@@ -18,8 +20,8 @@ public class ProductCommandController {
         return commandService.createProduct(productEvent);
     }
 
-    @PutMapping("/{id}")
-    public Product updateProduct(@PathVariable long id, @RequestBody ProductEvent productEvent) {
-        return commandService.updateProduct(id, productEvent);
+    @PutMapping("/{uuid}")
+    public Product updateProduct(@PathVariable UUID uuid, @RequestBody ProductEvent productEvent) {
+        return commandService.updateProduct(uuid, productEvent);
     }
 }
